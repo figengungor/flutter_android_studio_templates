@@ -1,0 +1,51 @@
+<templateSet group="Flutter">
+  <template name="scaf" value="Scaffold(&#10;    appBar: AppBar(title: Text('$TITLE$')),&#10;    body: Container(),&#10;);" description="Scaffold with appBar title and body" toReformat="false" toShortenFQNames="true">
+    <variable name="TITLE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="push" value="Navigator.push(&#10;      context,&#10;      MaterialPageRoute(&#10;        builder: (BuildContext context) {&#10;          return $PAGE$;&#10;        },&#10;      ),&#10;    );" description="Navigator push" toReformat="false" toShortenFQNames="true">
+    <variable name="PAGE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="pop" value="Navigator.pop(context);" description="Navigator pop" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="DART_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ftrbldr" value="FutureBuilder&lt;$TYPE$&gt;(&#10;      builder: (BuildContext context, AsyncSnapshot&lt;$TYPE$&gt; snapshot) {&#10;        future: $FUTURE$,&#10;        if (snapshot.hasData) {&#10;          return $FUNCTION1$(snapshot.data);&#10;        } else if (snapshot.hasError) {&#10;          return $FUNCTION2$(snapshot.error);&#10;        }&#10;        return CircularProgressIndicator();&#10;      },&#10;    );" description="FutureBuilder" toReformat="false" toShortenFQNames="true">
+    <variable name="TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="FUTURE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="FUNCTION1" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="FUNCTION2" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="strmbldr" value="StreamBuilder&lt;$TYPE$&gt;(&#10;      stream: $STREAM$,&#10;      builder: (BuildContext context, AsyncSnapshot&lt;$TYPE$&gt; snapshot) {&#10;        if (snapshot.hasData) {&#10;          return _buildData(snapshot.data);&#10;        } else if (snapshot.hasError) {&#10;          return _buildErrorView(snapshot.error);&#10;        }&#10;        return Container();&#10;      },&#10;    );" description="StreamBuilder" toReformat="false" toShortenFQNames="true">
+    <variable name="TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="STREAM" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="subj" value="Stream&lt;$TYPE$&gt; get $NAME$ =&gt; _$NAME$Subject.stream;&#10;&#10;final _$NAME$Subject = BehaviorSubject&lt;$TYPE$&gt;();" description="BehaviorSubject and Stream" toReformat="false" toShortenFQNames="true">
+    <variable name="TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART" value="true" />
+      <option name="DART_TOPLEVEL" value="false" />
+    </context>
+  </template>
+  <template name="snk" value="Sink&lt;$TYPE$&gt; get $NAME$ =&gt; _$NAME$Controller.sink;&#10;&#10;final _$NAME$Controller = StreamController&lt;$TYPE$&gt;();" description="StreamContrroller with Sink" toReformat="false" toShortenFQNames="true">
+    <variable name="TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART" value="true" />
+      <option name="DART_TOPLEVEL" value="false" />
+    </context>
+  </template>
+</templateSet>
